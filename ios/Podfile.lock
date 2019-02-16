@@ -1,4 +1,11 @@
 PODS:
+  - AppCenter/Analytics (1.13.0):
+    - AppCenter/Core
+  - AppCenter/Core (1.13.0)
+  - AppCenter/Crashes (1.13.0):
+    - AppCenter/Core
+  - AppCenterReactNativeShared (1.12.0):
+    - AppCenter/Core (= 1.13.0)
   - boost-for-react-native (1.63.0)
   - DoubleConversion (1.1.6)
   - Folly (2018.10.22.00):
@@ -41,6 +48,9 @@ PODS:
   - yoga (0.58.4.React)
 
 DEPENDENCIES:
+  - AppCenter/Analytics (~> 1.13.0)
+  - AppCenter/Crashes (~> 1.13.0)
+  - AppCenterReactNativeShared (~> 1.12.0)
   - DoubleConversion (from `../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec`)
   - Folly (from `../node_modules/react-native/third-party-podspecs/Folly.podspec`)
   - glog (from `../node_modules/react-native/third-party-podspecs/glog.podspec`)
@@ -53,6 +63,8 @@ DEPENDENCIES:
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - AppCenter
+    - AppCenterReactNativeShared
     - boost-for-react-native
 
 EXTERNAL SOURCES:
@@ -70,6 +82,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/yoga"
 
 SPEC CHECKSUMS:
+  AppCenter: a70408f15de23f925001bfc7b7473094a009a4eb
+  AppCenterReactNativeShared: 542de3c68bcec89fba964213048287592a443976
   boost-for-react-native: 39c7adb57c4e60d6c5479dd8623128eb5b3f0f2c
   DoubleConversion: bb338842f62ab1d708ceb63ec3d999f0f3d98ecd
   Folly: de497beb10f102453a1afa9edbf8cf8a251890de
@@ -78,6 +92,6 @@ SPEC CHECKSUMS:
   RNGestureHandler: 14c09a7361c272efea8f7f3799142c893a6a4485
   yoga: a767b95565bc4e939c7bf241a872cc29bad2f984
 
-PODFILE CHECKSUM: be47f53f29fa5f3673aaaed28b28c676775a273c
+PODFILE CHECKSUM: 2019dcd9f08e1001b0dd894be157ae5a3b9613cb
 
 COCOAPODS: 1.6.0
