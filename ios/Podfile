@@ -1,0 +1,38 @@
+platform :ios, '9.0'
+
+workspace 'baseline'
+
+def react_pods
+  pod 'React', :path => '../node_modules/react-native'
+  pod 'React', :path => '../node_modules/react-native', :subspecs => [
+    'Core',
+    'DevSupport',
+    'CxxBridge'
+  ]
+  
+  pod 'yoga', :path => '../node_modules/react-native/ReactCommon/yoga'
+  pod 'DoubleConversion', podspec: '../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec'
+  pod 'Folly', podspec: '../node_modules/react-native/third-party-podspecs/Folly.podspec'
+  pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.podspec'
+end
+
+target 'baseline' do
+  react_pods
+  # Pods for baseline
+end
+
+target 'baselineTests' do
+  react_pods
+end
+
+
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    if target.name == "React"
+      target.remove_from_project
+    end
+    if target.name == "yoga"
+      target.remove_from_project
+    end
+  end
+end
