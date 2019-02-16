@@ -19,6 +19,8 @@ end
 target 'baseline' do
   react_pods
   # Pods for baseline
+  pod 'RNGestureHandler', :path => '../node_modules/react-native-gesture-handler'
+
 end
 
 target 'baselineTests' do
