@@ -1,13 +1,7 @@
-import Analytics from 'appcenter-analytics';
 import React, { Component } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
 export default class App extends Component {
-  componentDidMount() {
-    Analytics.trackEvent('Video clicked', { Category: 'Music', FileName: 'favorite.avi' });
-    // Crashes.generateTestCrash();
-  }
-
   render() {
     return (
       <View style={styles.container}>
