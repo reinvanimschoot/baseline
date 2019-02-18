@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import Config from 'react-native-config';
+import CodePush from 'react-native-code-push';
 
 export default class App extends Component {
+  componentDidMount() {
+    CodePush.sync();
+  }
+
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>Welcome to React Native!</Text>
-        <Text style={styles.instructions}>{Config.API_URL}</Text>
+        <Text style={[styles.welcome, { color: 'blue' }]}>Welcome to BASELINE</Text>
       </View>
     );
   }
