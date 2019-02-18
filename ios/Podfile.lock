@@ -6,13 +6,21 @@ PODS:
     - AppCenter/Core
   - AppCenterReactNativeShared (1.12.0):
     - AppCenter/Core (= 1.13.0)
+  - Base64 (1.1.2)
   - boost-for-react-native (1.63.0)
+  - CodePush (5.5.2):
+    - Base64 (~> 1.1)
+    - JWT (~> 3.0.0-beta.7)
+    - React
+    - SSZipArchive (~> 2.1)
   - DoubleConversion (1.1.6)
   - Folly (2018.10.22.00):
     - boost-for-react-native
     - DoubleConversion
     - glog
   - glog (0.3.5)
+  - JWT (3.0.0-beta.11):
+    - Base64 (~> 1.1.2)
   - React (0.58.4):
     - React/Core (= 0.58.4)
   - react-native-config (0.11.7):
@@ -47,12 +55,14 @@ PODS:
     - React/RCTBlob
   - RNGestureHandler (1.0.15):
     - React
+  - SSZipArchive (2.1.4)
   - yoga (0.58.4.React)
 
 DEPENDENCIES:
   - AppCenter/Analytics (~> 1.13.0)
   - AppCenter/Crashes (~> 1.13.0)
   - AppCenterReactNativeShared (~> 1.12.0)
+  - CodePush (from `../node_modules/react-native-code-push`)
   - DoubleConversion (from `../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec`)
   - Folly (from `../node_modules/react-native/third-party-podspecs/Folly.podspec`)
   - glog (from `../node_modules/react-native/third-party-podspecs/glog.podspec`)
@@ -68,9 +78,14 @@ SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AppCenter
     - AppCenterReactNativeShared
+    - Base64
     - boost-for-react-native
+    - JWT
+    - SSZipArchive
 
 EXTERNAL SOURCES:
+  CodePush:
+    :path: "../node_modules/react-native-code-push"
   DoubleConversion:
     :podspec: "../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec"
   Folly:
@@ -89,15 +104,19 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   AppCenter: a70408f15de23f925001bfc7b7473094a009a4eb
   AppCenterReactNativeShared: 542de3c68bcec89fba964213048287592a443976
+  Base64: cecfb41a004124895a7bcee567a89bae5a89d49b
   boost-for-react-native: 39c7adb57c4e60d6c5479dd8623128eb5b3f0f2c
+  CodePush: 338a023972c64636503e8886cf4cb6ec27dd1c01
   DoubleConversion: bb338842f62ab1d708ceb63ec3d999f0f3d98ecd
   Folly: de497beb10f102453a1afa9edbf8cf8a251890de
   glog: aefd1eb5dda2ab95ba0938556f34b98e2da3a60d
+  JWT: 05028b9624591bba9681bb57df2c5f95fa258bad
   React: 6b36b9732ee830d06b470dc4ecdd6837718abe63
   react-native-config: 55548054279d92e0e4566ea15a8b9b81028ec342
   RNGestureHandler: 14c09a7361c272efea8f7f3799142c893a6a4485
+  SSZipArchive: 41455d4b8d2b6ab93990820b50dc697c2554a322
   yoga: a767b95565bc4e939c7bf241a872cc29bad2f984
 
-PODFILE CHECKSUM: a9b91bd61595fc74eba2b6447e9456e3fb4c054c
+PODFILE CHECKSUM: 7bf20cd0ec7d1ee7e8a46e08caff6e3686540cd5
 
 COCOAPODS: 1.6.0
