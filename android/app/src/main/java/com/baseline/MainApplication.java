@@ -39,7 +39,7 @@ public class MainApplication extends Application implements ReactApplication {
             new AppCenterReactNativeAnalyticsPackage(MainApplication.this, getResources().getString(R.string.appCenterAnalytics_whenToEnableAnalytics)),
             new AppCenterReactNativePackage(MainApplication.this),
             new RNGestureHandlerPackage(),
-            new CodePush("deployment-key-here", MainApplication.this, BuildConfig.DEBUG)
+            new CodePush(BuildConfig.CODEPUSH_KEY, MainApplication.this, BuildConfig.DEBUG)
       );
     }
 

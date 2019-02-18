@@ -62,7 +62,8 @@ android {
     }
     buildTypes {
         debug {
-           applicationIdSuffix ".dev"
+            applicationIdSuffix ".dev"
+            buildConfigField "String", "CODEPUSH_KEY", '""'
         }
 
         staging {    
@@ -71,12 +72,14 @@ android {
             signingConfig signingConfigs.release
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+            buildConfigField "String", "CODEPUSH_KEY", project.env.get("CODEPUSH_ANDROID_STAGING_KEY")
         }
 
         release {
             signingConfig signingConfigs.release
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+            buildConfigField "String", "CODEPUSH_KEY", project.env.get("CODEPUSH_ANDROID_PROD_KEY")
         }
     }
     // applicationVariants are e.g. debug, release
