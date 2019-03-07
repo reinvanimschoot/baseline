@@ -1,0 +1,20 @@
+###############
+###############
+##### iOS #####
+###############
+###############
+
+app_identifier 'com.bebop.baseline'
+apple_id 'reinvanimschoot@gmail.com'
+
+team_id '32TT253296'
+team_name 'Rein Van Imschoot'
+
+###################
+###################
+##### ANDROID #####
+###################
+###################
+
+json_key_file ''
+package_name ''

@@ -1,0 +1,48 @@
+# Support ENV variables as options or lane parameters
+fastlane_require 'dotenv'
+
+#################
+#################
+##### SETUP #####
+#################
+#################
+
+APP_ID = 'com.bebop.baseline'.freeze
+
+def copyEnvForBuildType(buildType)
+  dir = File.expand_path('..', Dir.pwd)
+  sh('cp', '%s/env/env.%s' % [dir, buildType], '%s/.env' % dir)
+end
+
+# before_all do
+#   yarn(
+#     command: 'install',
+#     package_path: './package.json'
+#   )
+# end
+
+###############
+###############
+##### iOS #####
+###############
+###############
+
+platform :ios do
+  lane :sign do
+    match(
+      type: 'development',
+      app_identifier: APP_ID + ".dev",
+    )
+
+    match(
+      type: 'adhoc',
+      app_identifier: APP_ID + ".staging",
+      force_for_new_devices: true
+    )
+
+    match(
+      app_identifier: APP_ID,
+      type: 'appstore'
+    )
+  end
+end
